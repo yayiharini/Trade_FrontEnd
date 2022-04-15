@@ -34,8 +34,8 @@
     "xlsx": "^0.18.4"
   },
   "scripts": {
-    "start": "npm start",
-    "build": "npm run build;npm install -g serve; serve -s build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
