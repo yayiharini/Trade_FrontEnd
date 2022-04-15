@@ -25,4 +25,4 @@ export const LITTERASSESSMENT = 'litterassessment'
 export const PLU = 'plu';
 
 export const AUTHENTICATION_ENDPOINT = 'http://authentication-env-4.eba-npjpr9av.us-west-2.elasticbeanstalk.com'
-export const TRADE_ENDPOINT = 'http://trade-backend-env-6.eba-dfktzybx.us-west-2.elasticbeanstalk.com/'
+export const TRADE_ENDPOINT = 'http://trade-backend-env-6.eba-dfktzybx.us-west-2.elasticbeanstalk.com'
