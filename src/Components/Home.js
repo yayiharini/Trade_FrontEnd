@@ -194,7 +194,7 @@ export default function Trade() {
   const counties=[];
 
   React.useEffect(() => {
-    fetch(TRADE_ENDPOINT + "/")
+    fetch(TRADE_ENDPOINT + "/",{headers :{'Origin':'XXX'}})
       .then((res) => res.json())
       .then((data) => {
         setcitycounty([...data]);
