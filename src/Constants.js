@@ -24,5 +24,5 @@ export const LITTERASSESSMENT_YEAR = 'litterassessment_year'
 export const LITTERASSESSMENT = 'litterassessment'
 export const PLU = 'plu';
 
-export const AUTHENTICATION_ENDPOINT = 'https://authentication-env-4.eba-npjpr9av.us-west-2.elasticbeanstalk.com'
+export const AUTHENTICATION_ENDPOINT = 'https://cors-everywhere.herokuapp.com/http://authentication-env-4.eba-npjpr9av.us-west-2.elasticbeanstalk.com'
 export const TRADE_ENDPOINT = 'https://cors-everywhere.herokuapp.com/http://trade-backend-env-6.eba-dfktzybx.us-west-2.elasticbeanstalk.com'
