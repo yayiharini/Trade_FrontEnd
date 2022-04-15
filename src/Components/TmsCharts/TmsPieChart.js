@@ -10,7 +10,7 @@ import TmsSubChartModal from "./TmsSubChartModal";
 import { pieChartConfig } from "./TmsChartsConfig";
 import axios from "axios";
 import * as Constants from "../../Constants";
-
+import {TRADE_ENDPOINT} from "../../Constants";
 const colorsArray = generateSectorColors();
 
 function TmsSubPieChart(props) {
