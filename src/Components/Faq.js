@@ -20,7 +20,6 @@ const Faq =()=>{
         method: 'POST',
         headers:{'Content-Type':'application/json',
       'Origin':'XXX'},
-        credentials:'include',
         body:JSON.stringify(
             {
                 email,
