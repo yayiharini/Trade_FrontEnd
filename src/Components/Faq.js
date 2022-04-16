@@ -18,7 +18,8 @@ const Faq =()=>{
 
     await fetch(AUTHENTICATION_ENDPOINT + '/api/login',{
         method: 'POST',
-        headers:{'Content-Type':'application/json'},
+        headers:{'Content-Type':'application/json',
+      'Origin':'XXX'},
         credentials:'include',
         body:JSON.stringify(
             {
