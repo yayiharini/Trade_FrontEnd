@@ -42,8 +42,6 @@ if(success){
     return <Navigate to="/login" />
 }
 
-
-
     return(
         
     <div class="form-container">
