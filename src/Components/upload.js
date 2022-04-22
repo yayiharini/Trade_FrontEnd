@@ -11,6 +11,8 @@ import * as XLSX from "xlsx";
 import Container from '@mui/material/Container';
 import "../App.css";
 import { Paper } from "@mui/material";
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import Cookies from 'universal-cookie';
 import { AUTHENTICATION_ENDPOINT } from "../Constants";
 
 const style = {
@@ -56,13 +58,15 @@ const Upload =()=>{
    React.useEffect(()=> {
     (
         async() =>{
-            const response= await fetch(AUTHENTICATION_ENDPOINT + '/api/user',{
-                  headers: {'Content-Type': 'application/json'},
-                  credentials:'include',
-            });
-
-            const content=await response.json();
-            setName(content.Name);
+          const cookies = new Cookies();
+          let jwt_token = cookies.get('jwt_token');
+          console.log(jwt_token);
+          const response= await fetch(AUTHENTICATION_ENDPOINT + '/api/user?jwt_token=' + jwt_token, {
+                headers: {'Content-Type': 'application/json'}
+          });
+            
+          const content=await response.json();
+          setName(content.Name);
         }
     )();
 
@@ -75,7 +79,7 @@ const Upload =()=>{
        file:file,
       };
       console.log('data',data);
-      axios.post(AUTHENTICATION_ENDPOINT + '/api/upload',  data ).then((res) => {
+      axios.post('http://127.0.0.1:8080/api/upload',  data ).then((res) => {
         console.log("------------- get record -------------------");
         console.log({ data });
         console.log(res.data);
@@ -88,7 +92,7 @@ const Upload =()=>{
   }
 
   const logout = async() =>{
-      const response= await fetch(AUTHENTICATION_ENDPOINT + '/api/logout',{
+      const response= await fetch('http://127.0.0.1:8080/api/logout',{
             method:'POST',
             headers: {'Content-Type': 'application/json'},
             credentials:'include',
@@ -99,40 +103,61 @@ const Upload =()=>{
   }
 
     return(
-     <Container maxWidth="md">
+     <Container maxWidth="sm" >
       <Paper elevation={2}>
-        
-        
-      <Grid container justifyContent="center" spacing={2}  >
+      
+      
+      <Grid container  spacing={3}  >
+          <Grid item xs={7}>
+          <AccountBoxIcon></AccountBoxIcon>
+            
+          </Grid>
+          <Grid item xs={5}>
+          <Button variant="contained" style={{ backgroundColor: "#008080" }} >
+          <Link to='/upload' underline='none' style={{ color: "white", textDecoration: 'none' }} onClick={logout} >Logout</Link>
+          </Button>
+          
+          </Grid>
+          
+         
           <Grid item md={12}>
 
-            <label value={name}>Hello {name} , you have logged in!</label>
+          </Grid>
+          <Grid item md={12}>
+
           </Grid>
           <Grid item md={12}> 
-         <label>You may download the <Button><a href={'/S123_EPA.xlsx'} download="your file name">Template</a></Button>for reference</label>
+          <label style={{ color: "#008080",fontWeight: 'bold',fontStyle:'italic'}}>Welcome {name} !! You can  now upload an excel file, This is the <Button><a href={'/S123_EPA.xlsx'} download="your file name">Template</a></Button> file for reference</label>
           </Grid>
-          <Grid item md={12}>
-          <label><h4> You may now upload a excel file</h4></label>
           
-               
-          </Grid>
-          <Grid item md={12}>
+          {/* <Grid item md={8}>
          
-          <input required type="file" onChange={onFileChange} />
+          <label>Upload your file</label>
+               
+          </Grid>  */}
+          <Grid item md={12}>
+
+           </Grid>
+          <Grid item md={12}>
+
+          </Grid>
+          <Grid item md={7}>
+            
+           <input required type="file" onChange={onFileChange} style={{ color:'#008080',fontWeight: 'bold'}} />
                
           </Grid>
 
-          <Grid item md={12}>
+          <Grid item md={5}>
            <Button variant="contained"  onClick={onFileUpload} style={{
                 backgroundColor: "#008080",
-              }}>Upload</Button>
+              }}><span></span>Upload</Button>
       
           </Grid>
           
           <Grid item md={12}>
-          <Link to='/upload' underline='none' style={{ color: "#008080", textDecoration: 'none' }} onClick={logout} >Logout</Link>
-          
+
           </Grid>
+          
       </Grid>
       </Paper>
       

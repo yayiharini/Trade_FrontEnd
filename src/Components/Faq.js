@@ -3,7 +3,8 @@ import "../App.css";
 import Upload from "./upload";
 import { Link } from "react-router-dom";
 import { Navigate } from 'react-router-dom';
-import { AUTHENTICATION_ENDPOINT } from "../Constants";
+import Cookies from 'universal-cookie';
+
 
 const Faq =()=>{
 
@@ -16,31 +17,47 @@ const Faq =()=>{
         e.preventDefault();
     
 
-    await fetch(AUTHENTICATION_ENDPOINT + '/api/login',{
+    let res = await fetch('http://127.0.0.1:8080/api/login',{
         method: 'POST',
         headers:{'Content-Type':'application/json'},
-        credentials:'include',
-        body:JSON.stringify(
-            {
-                email,
-                password
-            }
+        body: JSON.stringify(
+          {
+            email, 
+            password
+          }
         )
-    })
-    .then((res) =>{
-        console.log(res);
-        if(res.status ==200){
-            setSuccess(true);
+    });
+    console.log(res);
+    if(res.status ==200){
+      const resData= await res.json();
+      console.log("log",JSON.stringify(resData));
+      const cookies = new Cookies();
+      cookies.set('jwt_token', resData['jwt'], { path: '/' });
+      setSuccess(true);
+        
+    }else {
+        setSuccess(false);
+    }
+    // .then((res) =>{
+    //     console.log(res);
+    //     if(res.status ==200){
+    //       const resData= await response.json();
+    //       console.log("log",JSON.stringify(resData));
+    //       const cookies = new Cookies();
+    //       cookies.set('jwt', 'Pacman', { path: '/' });
+    //       setSuccess(true);
             
-        }else {
-            setSuccess(false);
-        }
-    })
-    .then((data)=>console.log(data));
+    //     }else {
+    //         setSuccess(false);
+    //     }
+    // })
+    // .then((data)=>console.log(data));
 }
 if(success){
     return <Navigate to="/login" />
 }
+
+
 
     return(
         
