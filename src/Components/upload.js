@@ -92,6 +92,8 @@ const Upload =()=>{
   }
 
   const logout = async() =>{
+    const cookies = new Cookies();
+    cookies.remove('jwt_token', { path: '/' });
       const response= await fetch('http://127.0.0.1:8080/api/logout',{
             method:'POST',
             headers: {'Content-Type': 'application/json'},
