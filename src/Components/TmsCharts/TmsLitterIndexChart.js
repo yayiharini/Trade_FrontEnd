@@ -8,11 +8,6 @@ import {
   Radio,
 } from "@mui/material";
 import * as Constants from "../../Constants";
-import {
-  getDistinctMaterialGroupsList,
-  populateMissingMaterialGroupAvgCount,
-  createLineChartData,
-} from "../../Helpers/ChartHelpers";
 import React from "react";
 import axios from "axios";
 import {
@@ -183,6 +178,7 @@ function TmsLitterIndexYearlyLineChart(props) {
               scales: {
                 ...lineChartConfig.scales,
                 y: {
+                  beginAtZero:true,
                   title: {
                     display: true,
                     text: "# Avg of Litter assement",
@@ -330,6 +326,7 @@ function TmsLitterIndexPartYearLineChart(props) {
               scales: {
                 ...lineChartConfig.scales,
                 y: {
+                  beginAtZero:true,
                   title: {
                     display: true,
                     text: "# Avg of Litter assement",
