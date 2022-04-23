@@ -116,10 +116,10 @@ function TmsLitterIndexYearlyLineChart(props) {
   React.useEffect(() => {
     async function fetchLineChartData() {
       try {
-        const response = await axios.post(
+        const response = await axios.get(
           TRADE_ENDPOINT + `/getLitterIndexDataByYear`,
           {
-            data: {
+            params: {
               ...props.requestData,
             },
           }
@@ -225,10 +225,10 @@ function TmsLitterIndexPartYearLineChart(props) {
             lastSegmentForApi = "getLitterIndexDataByMonth";
             break;
         }
-        const response = await axios.post(
+        const response = await axios.get(
           TRADE_ENDPOINT + `/${lastSegmentForApi}`,
           {
-            data: {
+            params: {
               ...props.requestData,
             },
           }
