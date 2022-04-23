@@ -19,10 +19,10 @@ function TmsSubBarChart(props) {
   React.useEffect(() => {
     async function fetchSubBarChartData() {
       try {
-        const response = await axios.post(
+        const response = await axios.get(
           TRADE_ENDPOINT + `/getSubBarChartData`,
           {
-            data: {
+            params: {
               ...props.requestData,
               [Constants.MATERIAL_GROUP]: props.title,
             },
@@ -95,10 +95,10 @@ export default function TmsBarChart(props) {
 
   React.useEffect(async () => {
     try {
-      const response = await axios.post(
+      const response = await axios.get(
         TRADE_ENDPOINT + `/getBarChartData`,
         {
-          data: props.requestData,
+          params: props.requestData,
         }
       );
       console.log("------------ Bar chart data from server ---------------");
