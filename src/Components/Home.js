@@ -54,7 +54,7 @@ export default function Trade() {
   const [countyvalue,setCountyValues]=React.useState([]);
   const [shedvalue,setShedValues]=React.useState([]);
   const [boardvalue,setBoardValues]=React.useState([]);
-  const [display1,setdisplay1]=React.useState(false);
+  const [displaycity,setdisplaycity]=React.useState(true);
   const [display2,setdisplay2]=React.useState(false);
   const [requestData, setRequestData] = React.useState({});
   const [position,setPosition]= React.useState({
@@ -281,7 +281,7 @@ console.log("waterboard",waterboard);
     console.log(value); // 1
   });
 
-  const [drop, setdrop] = React.useState('');
+  const [drop, setdrop] = React.useState('City');
 
   const handleChange = (event) => {
     setdrop(event.target.value);
@@ -289,7 +289,7 @@ console.log("waterboard",waterboard);
     const s="City";
     if(event.target.value===s){
        
-        setdisplay1(true);
+        setdisplaycity(true);
         setdisplay2(false);
         setDisplayWaterboard(false);
         setDisplayWatershed(false);
@@ -302,7 +302,7 @@ console.log("waterboard",waterboard);
     }
     else if(event.target.value=="Watershed"){
         
-        setdisplay1(false);
+        setdisplaycity(false);
         setdisplay2(false);
         setDisplayWaterboard(false);
         setDisplayWatershed(true);
@@ -316,7 +316,7 @@ console.log("waterboard",waterboard);
 
     }else if (event.target.value=="Waterboard"){
         
-        setdisplay1(false);
+        setdisplaycity(false);
         setdisplay2(false);
         setDisplayWaterboard(true);
         setDisplayWatershed(false);
@@ -330,7 +330,7 @@ console.log("waterboard",waterboard);
     } 
     else if (event.target.value=="County"){
         
-        setdisplay1(false);
+        setdisplaycity(false);
         setdisplay2(false);
         setDisplayWaterboard(false);
         setDisplayWatershed(false);
@@ -344,7 +344,7 @@ console.log("waterboard",waterboard);
     }  
     else  {
         setCity(null);
-        setdisplay1(false);
+        setdisplaycity(false);
         setdisplay2(true);
         setCounty(null);
         setWS(null);
@@ -394,7 +394,7 @@ console.log("waterboard",waterboard);
             </Select>
           </FormControl>
           </Grid>
-          {display1 && (<Grid item md={2} xs={12}>
+          {displaycity && (<Grid item md={2} xs={12}>
             <FormControl>
               <Autocomplete
                 id="city-auto"  
