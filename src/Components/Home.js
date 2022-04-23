@@ -169,7 +169,12 @@ export default function Trade() {
 
     setRequestData({ ...data });
     //alert(JSON.stringify(data));
-    axios.post(TRADE_ENDPOINT + `/getrecord`, { data }).then((res) => {
+    axios.get(TRADE_ENDPOINT + `/getrecord`,{ 
+      params:{
+        ...data,
+      },
+    })
+    .then((res) => {
       console.log("------------- get record -------------------");
       console.log({ data });
       console.log(res.data);

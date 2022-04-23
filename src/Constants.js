@@ -25,4 +25,4 @@ export const LITTERASSESSMENT = 'litterassessment'
 export const PLU = 'plu';
 
 export const AUTHENTICATION_ENDPOINT = 'https://cors-everywhere.herokuapp.com/http://authentication-backend-env-8.eba-p2znsumh.us-west-2.elasticbeanstalk.com'
-export const TRADE_ENDPOINT = 'https://cors-everywhere.herokuapp.com/http://trade-backend-env-6.eba-dfktzybx.us-west-2.elasticbeanstalk.com'
+export const TRADE_ENDPOINT = 'https://cors-everywhere.herokuapp.com/http://trade-backend-env-7.eba-dfktzybx.us-west-2.elasticbeanstalk.com'
