@@ -103,10 +103,10 @@ function TmsYearlyLineChart(props) {
   React.useEffect(() => {
     async function fetchLineChartData() {
       try {
-        const response = await axios.post(
+        const response = await axios.get(
           TRADE_ENDPOINT + `/getLineChartDataByYear`,
           {
-            data: {
+            params: {
               ...props.requestData,
             },
           }
@@ -211,10 +211,10 @@ function TmsMonthlyLineChart(props) {
   React.useEffect(() => {
     async function fetchLineChartData() {
       try {
-        const response = await axios.post(
+        const response = await axios.get(
           TRADE_ENDPOINT + `/getLineChartDataByMonth`,
           {
-            data: {
+            params: {
               ...props.requestData,
             },
           }
@@ -317,10 +317,10 @@ function TmsQuarterlyLineChart(props) {
   React.useEffect(() => {
     async function fetchLineChartData() {
       try {
-        const response = await axios.post(
+        const response = await axios.get(
           TRADE_ENDPOINT + `/getLineChartDataByQuarter`,
           {
-            data: {
+            params: {
               ...props.requestData,
             },
           }
@@ -424,10 +424,10 @@ function TmsSemiAnuallyLineChart(props){
   React.useEffect(() => {
     async function fetchLineChartData() {
       try {
-        const response = await axios.post(
+        const response = await axios.get(
           TRADE_ENDPOINT + `/getLineChartDataSemiAnually`,
           {
-            data: {
+            params: {
               ...props.requestData,
             },
           }
