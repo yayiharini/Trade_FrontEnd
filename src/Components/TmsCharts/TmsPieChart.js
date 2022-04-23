@@ -18,10 +18,10 @@ function TmsSubPieChart(props) {
   React.useEffect(() => {
     async function fetchPieChartData() {
       try {
-        const response = await axios.post(
+        const response = await axios.get(
           TRADE_ENDPOINT + `/getSubPieChartData`,
           {
-            data: {
+            params: {
               ...props.requestData,
               [Constants.MATERIAL_GROUP]: props.title,
             },
@@ -97,10 +97,10 @@ export default function TmsPieChart(props) {
 
   React.useEffect(async () => {
     try {
-      const response = await axios.post(
+      const response = await axios.get(
         TRADE_ENDPOINT + `/getPieChartData`,
         {
-          data: props.requestData,
+          params: props.requestData,
         }
       );
       console.log("------------ Pie chart data from server ---------------");
