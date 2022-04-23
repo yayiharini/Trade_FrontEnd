@@ -55,7 +55,7 @@ export default function Trade() {
   const [shedvalue,setShedValues]=React.useState([]);
   const [boardvalue,setBoardValues]=React.useState([]);
   const [displaycity,setdisplaycity]=React.useState(true);
-  const [display2,setdisplay2]=React.useState(false);
+  const [displaypermittee,setdisplaypermittee]=React.useState(false);
   const [requestData, setRequestData] = React.useState({});
   const [position,setPosition]= React.useState({
     lat: 38.56572251, lng: -121.4246997
@@ -290,7 +290,7 @@ console.log("waterboard",waterboard);
     if(event.target.value===s){
        
         setdisplaycity(true);
-        setdisplay2(false);
+        setdisplaypermittee(false);
         setDisplayWaterboard(false);
         setDisplayWatershed(false);
         setPermitteenum("");
@@ -303,7 +303,7 @@ console.log("waterboard",waterboard);
     else if(event.target.value=="Watershed"){
         
         setdisplaycity(false);
-        setdisplay2(false);
+        setdisplaypermittee(false);
         setDisplayWaterboard(false);
         setDisplayWatershed(true);
         setDisplayCounty(false);
@@ -317,7 +317,7 @@ console.log("waterboard",waterboard);
     }else if (event.target.value=="Waterboard"){
         
         setdisplaycity(false);
-        setdisplay2(false);
+        setdisplaypermittee(false);
         setDisplayWaterboard(true);
         setDisplayWatershed(false);
         setDisplayCounty(false);
@@ -331,7 +331,7 @@ console.log("waterboard",waterboard);
     else if (event.target.value=="County"){
         
         setdisplaycity(false);
-        setdisplay2(false);
+        setdisplaypermittee(false);
         setDisplayWaterboard(false);
         setDisplayWatershed(false);
         setDisplayCounty(true);
@@ -345,7 +345,7 @@ console.log("waterboard",waterboard);
     else  {
         setCity(null);
         setdisplaycity(false);
-        setdisplay2(true);
+        setdisplaypermittee(true);
         setCounty(null);
         setWS(null);
         setBoard(null);
@@ -355,7 +355,7 @@ console.log("waterboard",waterboard);
     }
   };
    
-  console.log("display",display2);
+  console.log("display",displaypermittee);
   return (
     <Container maxWidth="xl">
       <Box >
@@ -511,7 +511,7 @@ console.log("waterboard",waterboard);
           </Grid>)}
           
           
-           {display2 && (<Grid item md={2} xs={12} >
+           {displaypermittee && (<Grid item md={2} xs={12} >
             <FormControl
               fullWidth
               variant="standard"
@@ -576,7 +576,7 @@ console.log("waterboard",waterboard);
               />
             </Stack>
           </Grid>
-          {display2 && (<Grid item md={2} xs={12}>
+          {displaypermittee && (<Grid item md={2} xs={12}>
             <FormControl
               fullWidth
               variant="standard"
