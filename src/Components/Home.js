@@ -625,6 +625,7 @@ console.log("waterboard",waterboard);
                 backgroundColor: "#008080",
                 minWidth: 150
               }}
+              onClick={handleClick}
             >
               <Link
                 to="/tab"
