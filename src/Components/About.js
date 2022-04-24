@@ -5,7 +5,7 @@ const About =()=>{
     return(
         <div>
             
-            <Accordion1/>
+            <p>Under Construction!</p>
         </div>
     )
 }

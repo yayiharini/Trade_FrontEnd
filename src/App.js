@@ -20,7 +20,7 @@ function App() {
         <Route path="/upload" element={<Faq />} />
         <Route path="/trade" element={<Trading />} />
         <Route path="/tab" element={<Main1 />} />
-        <Route path="/faq" element={<Trade />} />
+        <Route path="/faq" element={<About />} />
         <Route path="/login" element={<Upload/>}/>
       </Routes>
     </div>
