@@ -84,7 +84,10 @@ export default function Trade() {
     };
     //alert(JSON.stringify(data));
 
-    axios.post(TRADE_ENDPOINT + `/getplu`, { data }).then((res) => {
+    if( val != "ALL")
+    {
+      setDisabled(false);
+    axios.post(`http://127.0.0.1:8000/getplu`, { data }).then((res) => {
       console.log(res.data);
       setTimeout(function () {
         //alert('Hi')
@@ -92,6 +95,11 @@ export default function Trade() {
       setplu([{ plu: "ALL" }, ...res.data]);
       setpluname(["ALL", ...res.data.map((eachPlu) => eachPlu.plu)]);
     });
+  }
+  else {
+  setDisabled(true);
+  setpluname([]);
+  }
   };
 
   
@@ -272,7 +280,7 @@ console.log("waterboard",waterboard);
     fetch(TRADE_ENDPOINT + "/permitte")
       .then((res) => res.json())
       .then((data) => {
-        setPermittee([...data]);
+        setPermittee([{"permittee": "ALL"},...data]);
         setPermitteenum("ALL");
       })
       .then(setisLoading(false));
@@ -594,7 +602,7 @@ console.log("waterboard",waterboard);
                 multiple
                 //input={<OutlinedInput label="Tag" />}
                 value={pluname}
-                
+                disabled={disabled}
                 label="pluname"
                 renderValue={(selected) => selected.join(", ")}
                 onChange={handlePluChange}
