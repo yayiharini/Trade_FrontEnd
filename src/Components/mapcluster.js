@@ -151,22 +151,15 @@ export default function Mapcomp(props) {
               lng={longitude}
               
             >
-            <div >
                 <button id={cluster.properties.recid} onClick={(event) => {
                      setMarker(event.currentTarget);
                      marker = event.currentTarget;
                      marker_id = event.currentTarget.id;
                      setPopoverEnabled(true);
                      setInfo({...cluster.properties});
-                     
-                     
-                     
                      }} className="crime-marker">
-                
-                    
                  <img  style={{height:50,width:60}} src ={`/${cluster.properties.LitterAssessment}.svg`} alt={`${cluster.properties.LitterAssessment}`} />
-                    
-         
+
                 </button>
                 <Popover
                 id={marker ? marker.id : undefined}
@@ -194,6 +187,12 @@ export default function Mapcomp(props) {
                       </Grid>       
                       <Grid item md={9} style={{fontStyle:'italic',fontSize:15}}>
                       {cluster.properties.itemcount}
+                      </Grid>
+                      <Grid item md={10} style={{fontStyle:'italic',fontSize:15}}>
+                      {cluster.properties.plu}
+                      </Grid>
+                      <Grid item md={10} style={{fontStyle:'italic',fontSize:15}}>
+                      {cluster.properties.permittee}
                       </Grid> 
                       <Grid item md={4}>
                       <label style={{fontWeight:'bold',fontSize:15,color:"#008080",fontStyle:'italic'}}>Litter Assessment:</label>
@@ -210,7 +209,7 @@ export default function Mapcomp(props) {
                   </Grid> 
                   </Box>        
                   </Popover>  
-              </div>
+              
               
             </Marker>
 
