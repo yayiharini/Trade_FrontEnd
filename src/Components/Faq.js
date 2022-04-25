@@ -4,6 +4,7 @@ import Upload from "./upload";
 import { Link } from "react-router-dom";
 import { Navigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
+import { AUTHENTICATION_ENDPOINT } from "../Constants";
 
 
 const Faq =()=>{
@@ -17,7 +18,7 @@ const Faq =()=>{
         e.preventDefault();
     
 
-    let res = await fetch('http://127.0.0.1:8080/api/login',{
+    let res = await fetch(AUTHENTICATION_ENDPOINT + '/api//login',{
         method: 'POST',
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify(
