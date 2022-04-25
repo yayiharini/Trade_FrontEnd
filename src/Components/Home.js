@@ -87,7 +87,8 @@ export default function Trade() {
     if( val != "ALL")
     {
       setDisabled(false);
-    axios.post(`http://127.0.0.1:8000/getplu`, { data }).then((res) => {
+      //TRADE_ENDPOINT + `/getrecord`
+    axios.post(TRADE_ENDPOINT + `/getplu`, { data }).then((res) => {
       console.log(res.data);
       setTimeout(function () {
         //alert('Hi')

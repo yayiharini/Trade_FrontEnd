@@ -79,7 +79,7 @@ const Upload =()=>{
        file:file,
       };
       console.log('data',data);
-      axios.post('http://127.0.0.1:8080/api/upload',  data ).then((res) => {
+      axios.post(AUTHENTICATION_ENDPOINT + '/api/upload',  data ).then((res) => {
         console.log("------------- get record -------------------");
         console.log({ data });
         console.log(res.data);
@@ -94,7 +94,7 @@ const Upload =()=>{
   const logout = async() =>{
     const cookies = new Cookies();
     cookies.remove('jwt_token', { path: '/' });
-      const response= await fetch('http://127.0.0.1:8080/api/logout',{
+      const response= await fetch(AUTHENTICATION_ENDPOINT + '/api/logout',{
             method:'POST',
             headers: {'Content-Type': 'application/json'},
             credentials:'include',
