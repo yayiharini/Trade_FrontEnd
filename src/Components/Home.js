@@ -474,7 +474,7 @@ console.log("waterboard",waterboard);
                 options={watershed}
                 value={shedvalue}
                 onChange={(event, value) => {
-                    setCountyValues(value);
+                  setCountyValues([]);
                     setValues([]);
                     setBoardValues([]);
                   setPermitteenum(null);
@@ -509,6 +509,7 @@ console.log("waterboard",waterboard);
                   setShedValues([]);
                   setPermitteenum(null);
                   setpluname([]);
+                  setCountyValues([]);
                 }}
                 
                 renderInput={(params) => (
@@ -623,7 +624,8 @@ console.log("waterboard",waterboard);
               variant="outlined"
               style={{
                 backgroundColor: "#008080",
-                minWidth: 150
+                minWidth: 150,
+                textDecorationColor:"white"
               }}
               onClick={handleClick}
             >
