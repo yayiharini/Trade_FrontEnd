@@ -188,10 +188,16 @@ export default function Mapcomp(props) {
                       <Grid item md={9} style={{fontStyle:'italic',fontSize:15}}>
                       {cluster.properties.itemcount}
                       </Grid>
-                      <Grid item md={10} style={{fontStyle:'italic',fontSize:15}}>
+                      <Grid item md={3}>
+                      <label style={{fontWeight:'bold',fontSize:15,color:"#008080",fontStyle:'italic'}}>PLU:</label>
+                      </Grid>
+                      <Grid item md={9} style={{fontStyle:'italic',fontSize:15}}>
                       {cluster.properties.plu}
                       </Grid>
-                      <Grid item md={10} style={{fontStyle:'italic',fontSize:15}}>
+                      <Grid item md={3}>
+                      <label style={{fontWeight:'bold',fontSize:15,color:"#008080",fontStyle:'italic'}}>permittee:</label>
+                      </Grid>
+                      <Grid item md={9} style={{fontStyle:'italic',fontSize:15}}>
                       {cluster.properties.permittee}
                       </Grid> 
                       <Grid item md={4}>
