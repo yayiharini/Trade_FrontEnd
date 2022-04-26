@@ -14,6 +14,8 @@ import { Paper } from "@mui/material";
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import Cookies from 'universal-cookie';
 import { AUTHENTICATION_ENDPOINT } from "../Constants";
+import fileDownload from 'js-file-download'
+import axios from 'axios'
 
 const style = {
     position: 'absolute',
@@ -26,6 +28,15 @@ const style = {
     boxShadow: 24,
     p: 4,
   };
+
+  const handleDownload = (url, filename) => {
+    axios.get(url, {
+      responseType: 'blob',
+    })
+    .then((res) => {
+      fileDownload(res.data, filename)
+    })
+  }
 
 const Upload =()=>{
    const [file,setFile]=React.useState();
@@ -129,7 +140,11 @@ const Upload =()=>{
 
           </Grid>
           <Grid item md={12}> 
-          <label style={{ color: "#008080",fontWeight: 'bold',fontStyle:'italic'}}>Welcome {name} !! You can  now upload an excel file, This is the <Button><a href={process.env.PUBLIC_URL + '/S123_EPA.xlsx'} download="template.xlsx">Template</a></Button> file for reference</label>
+          <label style={{ color: "#008080",fontWeight: 'bold',fontStyle:'italic'}}>Welcome {name} !! You can  now upload an excel file, This is the 
+          <button onClick={() => {this.handleDownload('https://main.dkcd9m6e0opd4.amplifyapp.com/S123_EPA.xlsx', 'template.xlsx')
+          }}>Template</button>
+          {/* <Button><a href={process.env.PUBLIC_URL + '/S123_EPA.xlsx'} download="template.xlsx">Template</a></Button> */}
+           file for reference</label>
           </Grid>
           
           {/* <Grid item md={8}>
