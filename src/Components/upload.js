@@ -34,7 +34,7 @@ const Upload =()=>{
    const [name,setName]=React.useState('');
 
    const handleDownload = () => {
-    let url = 'https://cors-everywhere.herokuapp.com/https://main.dkcd9m6e0opd4.amplifyapp.com/S123_EPA.xlsx';
+    let url = 'https://main.dkcd9m6e0opd4.amplifyapp.com/S123_EPA.xlsx';
     let filename = 'template.xlsx';
       axios.get(url, {
         responseType: 'blob',
@@ -140,8 +140,8 @@ const Upload =()=>{
           </Grid>
           <Grid item md={12}> 
           <label style={{ color: "#008080",fontWeight: 'bold',fontStyle:'italic'}}>Welcome {name} !! You can  now upload an excel file, This is the 
-          <button onClick={handleDownload}>Template</button>
-          {/* <Button><a href={process.env.PUBLIC_URL + '/S123_EPA.xlsx'} download="template.xlsx">Template</a></Button> */}
+          {/* <button onClick={handleDownload}>Template</button> */}
+          <Button><a href={'https://drive.google.com/uc?export=download&id=1uUK2i8ymLJo-iiae-tlYDGZqEIKv7cHf'} download="template.xlsx">Template</a></Button>
            file for reference</label>
           </Grid>
           
