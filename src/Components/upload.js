@@ -34,7 +34,7 @@ const Upload =()=>{
    const [name,setName]=React.useState('');
 
    const handleDownload = () => {
-    let url = 'https://main.dkcd9m6e0opd4.amplifyapp.com/S123_EPA.xlsx';
+    let url = 'https://cors-everywhere.herokuapp.com/https://main.dkcd9m6e0opd4.amplifyapp.com/S123_EPA.xlsx';
     let filename = 'template.xlsx';
       axios.get(url, {
         responseType: 'blob',
