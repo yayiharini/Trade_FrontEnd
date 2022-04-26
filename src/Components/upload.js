@@ -15,7 +15,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import Cookies from 'universal-cookie';
 import { AUTHENTICATION_ENDPOINT } from "../Constants";
 import fileDownload from 'js-file-download'
-import axios from 'axios'
+
 
 const style = {
     position: 'absolute',
