@@ -129,7 +129,7 @@ const Upload =()=>{
 
           </Grid>
           <Grid item md={12}> 
-          <label style={{ color: "#008080",fontWeight: 'bold',fontStyle:'italic'}}>Welcome {name} !! You can  now upload an excel file, This is the <Button><a href={process.env.PUBLIC_URL + '/S123_EPA.xlsx'} download="your file name">Template</a></Button> file for reference</label>
+          <label style={{ color: "#008080",fontWeight: 'bold',fontStyle:'italic'}}>Welcome {name} !! You can  now upload an excel file, This is the <Button><a href={process.env.PUBLIC_URL + '/S123_EPA.xlsx'}>Template</a></Button> file for reference</label>
           </Grid>
           
           {/* <Grid item md={8}>
