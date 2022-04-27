@@ -35,7 +35,7 @@ export default function Trade() {
   const [citycounty, setcitycounty] = React.useState([]);
   //const [watershed,setwatershed]=React.useState([]);
   const [fromdate, setfromdate] = React.useState("2001-05-24");
-  const [todate, settodate] = React.useState("2050-05-24");
+  const [todate, settodate] = React.useState("2022-04-27");
   const [plu, setplu] = React.useState([]);
   const [isLoading, setisLoading] = React.useState(true);
   const [records, setRecords] = React.useState([]);
@@ -175,9 +175,7 @@ export default function Trade() {
       countyname:county,
       cityname:city,
     };
-
     setRequestData({ ...data });
-    //alert(JSON.stringify(data));
     axios.get(TRADE_ENDPOINT + `/getrecord`,{ 
       params:{
         ...data,
@@ -191,13 +189,9 @@ export default function Trade() {
       setvalues(res.data.tableData);
       positiondata(res.data.tableData);
     });
-    
-    
-    setPermdisabled(false);
+ setPermdisabled(false);
     setCitydisabled(false);
   };
-  
-  
   const handleClick = (event) => {
     event.preventDefault();
     submitInputData();
