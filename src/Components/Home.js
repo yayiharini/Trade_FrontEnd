@@ -208,7 +208,7 @@ export default function Trade() {
         setcitycounty([...data]);
         data.forEach(myFunction);
         function myFunction(item) {
-          if (item.county != null || item.county != '' || !counties.includes(item.county)) {
+          if (item.county != null && item.county != '' && !counties.includes(item.county)) {
             counties.push(item.county);
           }
           if(item.city != null){
