@@ -33,16 +33,7 @@ const Upload =()=>{
    const [file,setFile]=React.useState();
    const [name,setName]=React.useState('');
 
-   const handleDownload = () => {
-    let url = 'https://main.dkcd9m6e0opd4.amplifyapp.com/S123_EPA.xlsx';
-    let filename = 'template.xlsx';
-      axios.get(url, {
-        responseType: 'blob',
-      })
-      .then((res) => {
-        fileDownload(res.data, filename)
-      })
-    } 
+   
    const onFileChange=  (event) =>{
      
     const fileReader = new FileReader();
