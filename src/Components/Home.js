@@ -225,6 +225,8 @@ export default function Trade() {
   }, []);
   console.log(citycounty);
   console.log("auto", auto);
+  console.log("counties",countyarray);
+  console.log("cities",cityarray);
   const watersheds=[];
   React.useEffect(() => {
     fetch(TRADE_ENDPOINT + "/getwatershed")
