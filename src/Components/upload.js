@@ -149,7 +149,7 @@ const Upload =()=>{
 
           </Grid>
           <Grid item md={12}> 
-          <label style={{ color: "#008080",fontWeight: 'bold',fontStyle:'italic'}}>Welcome {name} !! You can  now upload an excel file, This is the 
+          <label style={{ color: "#008080",fontWeight: 'bold',fontStyle:'italic'}}>You can  now upload an excel file, This is the 
           {/* <button onClick={handleDownload}>Template</button> */}
           <Button><a href={'https://drive.google.com/uc?export=download&id=1uUK2i8ymLJo-iiae-tlYDGZqEIKv7cHf'} download="template.xlsx">Template</a></Button>
            file for reference</label>
