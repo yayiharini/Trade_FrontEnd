@@ -135,8 +135,8 @@ function TmsYearlyLineChart(props) {
 
   if (!yearlyLineChartData) {
     return <Typography>Loading ....</Typography>;
-  } else if (yearlyLineChartData && yearlyLineChartData === "ERROR") {
-    return <Typography>No chart data !!</Typography>;
+  } else if (yearlyLineChartData && yearlyLineChartData === "ERROR" || Object.keys(yearlyLineChartData[Constants.MATERIAL_GROUP_YEARLY_LIST]).length == 0) {
+    return <Typography>No data appears for the selected date range and filter</Typography>;
   }
 
   console.log("-------- Yearly line chart data -------------");
@@ -243,8 +243,8 @@ function TmsMonthlyLineChart(props) {
 
   if (!monthlyLineChartData) {
     return <Typography>Loading ....</Typography>;
-  } else if (monthlyLineChartData && monthlyLineChartData === "ERROR") {
-    return <Typography>No chart data !!</Typography>;
+  } else if (monthlyLineChartData && monthlyLineChartData === "ERROR" || Object.keys(monthlyLineChartData[Constants.MATERIAL_GROUP_MONTHLY_LIST]).length == 0) {
+    return <Typography>No data appears for the selected date range and filter</Typography>;
   }
 
   const distinctMaterialGroupsList = getDistinctMaterialGroupsList(
@@ -349,8 +349,8 @@ function TmsQuarterlyLineChart(props) {
 
   if (!quarterlyLineChartData) {
     return <Typography>Loading ....</Typography>;
-  } else if (quarterlyLineChartData && quarterlyLineChartData === "ERROR") {
-    return <Typography>No chart data !!</Typography>;
+  } else if (quarterlyLineChartData && quarterlyLineChartData === "ERROR" || Object.keys(quarterlyLineChartData[Constants.MATERIAL_GROUP_QUARTERLY_LIST]).length == 0) {
+    return <Typography>No data appears for the selected date range and filter</Typography>;
   }
 
   console.log("-------- Quarterly line chart data -------------");
@@ -456,8 +456,8 @@ function TmsSemiAnuallyLineChart(props){
 
   if (!quarterlyLineChartData) {
     return <Typography>Loading ....</Typography>;
-  } else if (quarterlyLineChartData && quarterlyLineChartData === "ERROR") {
-    return <Typography>No chart data !!</Typography>;
+  } else if (quarterlyLineChartData && quarterlyLineChartData === "ERROR" ||Object.keys(quarterlyLineChartData[Constants.MATERIAL_GROUP_MONTHLY_LIST]).length == 0 ) {
+    return <Typography>No data appears for the selected date range and filter</Typography>;
   }
 
   console.log("-------- Quarterly line chart data -------------");
