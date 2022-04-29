@@ -90,8 +90,6 @@ function TmsSubPieChart(props) {
 
 export default function TmsPieChart(props) {
   const [modalState, setOpenModal] = React.useState(false);
-  const [subPieChartDataInState, setSubPieChartDataInState] =
-    React.useState(null);
   const [pieChartData, setPieChartData] = React.useState(null);
   const [matGrpForSubPieChart, setMatGrpForSubPieChart] = React.useState(null);
 
@@ -123,12 +121,13 @@ export default function TmsPieChart(props) {
 
   if (!pieChartData) {
     return <Typography>Loading ....</Typography>;
-  } else if (pieChartData && pieChartData === "ERROR") {
-    return <Typography>No chart data !!</Typography>;
+  } else if (pieChartData && pieChartData === "ERROR" || Object.keys(pieChartData).length == 0) {
+    return <Typography>No data appears for the selected date range and filter</Typography>;
   }
 
   console.log("---------- Pie chart data -------------");
   console.log(pieChartData);
+  console.log('type of pie',Object.keys(pieChartData).length);
 
   const materialGroupLabels = extractLabels(pieChartData);
   const sectorDataPoints = extractSectorData(materialGroupLabels, pieChartData);

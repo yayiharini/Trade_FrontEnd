@@ -121,8 +121,8 @@ export default function TmsBarChart(props) {
 
   if (!barChartData) {
     return <Typography>Loading ....</Typography>;
-  } else if (barChartData && barChartData === "ERROR") {
-    return <Typography>No chart data !!</Typography>;
+  } else if (barChartData && barChartData === "ERROR" || Object.keys(barChartData).length == 0) {
+    return <Typography>No data appears for the selected date range and filter</Typography>;
   }
 
   console.log("---------- Bar chart data -------------");
