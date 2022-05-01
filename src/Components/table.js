@@ -41,7 +41,7 @@ export default function BasicTable(props) {
                   <TableCell align="right" key={3}>{item.LitterAssessment}</TableCell>
                   <TableCell align="right" key={4}>{item.date}</TableCell>
                   <TableCell align="right" key={5}>{item.permittee}</TableCell>
-                  <TableCell align="right" key={6}>{item.itemcount}</TableCell>
+                  <TableCell align="right" key={6}>{item.itemcount ? item.itemcount : 0}</TableCell>
           
                 </TableRow>
               )

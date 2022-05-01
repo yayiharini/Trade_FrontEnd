@@ -185,7 +185,7 @@ export default function Mapcomp(props) {
                       <label style={{fontWeight:'bold',fontSize:15,color:"#008080",fontStyle:'italic'}}>Item Count:</label>
                       </Grid>       
                       <Grid item md={9} style={{fontStyle:'italic',fontSize:15}}>
-                      {cluster.properties.itemcount}
+               
                       {cluster.properties.itemcount ? cluster.properties.itemcount : 0}
                       </Grid>
                       <Grid item md={3}>
