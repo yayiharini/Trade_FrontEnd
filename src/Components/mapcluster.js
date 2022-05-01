@@ -19,17 +19,16 @@ export default function Mapcomp(props) {
     const mapRef = useRef();
     const {records,position}={...props};
     console.log('propss',position);
-    //const {position}=props.position;
+    
     const [bounds, setBounds] = useState(null);
     const [zoom, setZoom] = useState(10);
     let [marker,setMarker]=useState(null);
-    //const open=Boolean(marker);
-    //const id = open ? marker.id : undefined;
+    
     const [litter,setLitter]=useState(1);
-    //const [popover,setPopover]=useState(false);
+   
     const [info,setInfo]=useState([]);
     const [popoverEnabled,setPopoverEnabled]=useState(false);
-    //const [position,setPosition]=useState();
+   
     var marker_id=null;
     console.log("record",records[0]);
     
@@ -187,6 +186,7 @@ export default function Mapcomp(props) {
                       </Grid>       
                       <Grid item md={9} style={{fontStyle:'italic',fontSize:15}}>
                       {cluster.properties.itemcount}
+                      {cluster.properties.itemcount ? cluster.properties.itemcount : 0}
                       </Grid>
                       <Grid item md={3}>
                       <label style={{fontWeight:'bold',fontSize:15,color:"#008080",fontStyle:'italic'}}>PLU:</label>
